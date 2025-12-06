@@ -1,0 +1,360 @@
+/*
+ * Tema CSS: Moderno e Estiloso
+ * Cor Predominante: Verde Esmeralda (#16a085)
+ */
+
+/* Variáveis de Cores */
+:root {
+  --primary-color: #16a085; /* Verde Esmeralda - Ação Principal */
+  --secondary-color: #2ecc71; /* Verde Claro - Destaque */
+  --background-gradient-start: #d1f7e6; /* Verde muito claro/quase branco */
+  --background-gradient-end: #79d799; /* Verde Suave */
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --border-radius: 12px;
+}
+
+/* Base Body e Container */
+body {
+  /* Gradiente Verde/Azul para o fundo */
+  background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end)); 
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  background: var(--card-bg);
+  margin-top: 80px; /* Mais espaço para o cabeçalho fixo */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  max-width: 700px; /* Aumentado ligeiramente para um visual mais aberto */
+  width: 90%;
+  transition: all 0.3s ease;
+}
+
+/* Cabeçalho e Navegação Fixa */
+header, nav {
+  background: rgba(22, 160, 133, 0.95); /* Verde Esmeralda semi-transparente */
+  backdrop-filter: blur(8px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+.logo {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav a:hover {
+  color: #c8e6c9; /* Verde bem claro no hover */
+  border-bottom: 2px solid #c8e6c9;
+}
+
+/* Formulários e Inputs */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+input, select, textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #c8c8c8;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.2);
+    outline: none;
+}
+
+/* Botões */
+button, .btn {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--text-light);
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.1s;
+}
+button:hover, .btn:hover {
+  background-color: #1abc9c; /* Verde ligeiramente mais claro */
+  transform: translateY(-1px);
+}
+button:active, .btn:active {
+  transform: translateY(0);
+}
+
+/* Mensagens de Status */
+.error {
+  color: #e74c3c;
+  background-color: #fdd8d8;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #e74c3c;
+}
+.success {
+  color: var(--primary-color);
+  background-color: #e6f7f1;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Estilo do Post (Post Card) */
+.post {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  transition: box-shadow 0.3s;
+}
+.post:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.post img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--secondary-color);
+}
+.post strong {
+    color: var(--primary-color);
+}
+.post p:first-of-type { /* Username/Name */
+    margin: 0;
+    line-height: 1.2;
+}
+.post-content {
+  margin-top: 0.8rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+.post a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+.post a:hover {
+    color: #1abc9c;
+    text-decoration: underline;
+}
+.post hr {
+    border: none;
+    border-top: 1px solid #f0f0f0;
+    margin: 15px 0;
+}
+
+/* Estilos de Perfil */
+.profile-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.profile-info img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--secondary-color);
+    margin-bottom: 1rem;
+}
+.profile-info h1 {
+    color: var(--text-dark);
+    margin-bottom: 0.2rem;
+}
+.profile-info p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para Pesquisa de Usuários */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.search-form input[type="text"] {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+.search-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+.search-result:last-child {
+    border-bottom: none;
+}
+.search-user-details {
+    display: flex;
+    align-items: center;
+}
+.search-user-details img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 1px solid var(--secondary-color);
+}
+.search-user-details strong {
+    display: block;
+    color: var(--primary-color);
+}
+.search-user-details span {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+.btn-unfollow {
+    background-color: #e74c3c !important; /* Vermelho para desfazer ação */
+}
+.btn-unfollow:hover {
+    background-color: #c0392b !important;
+}
+
+/* Responsividade Básica */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem;
+    margin-top: 70px;
+  }
+  header, nav {
+    padding: 0 15px;
+  }
+  nav a {
+    margin: 0 8px;
+  }
+  .search-form {
+      flex-direction: column;
+      gap: 5px;
+  }
+  .search-form button {
+      width: 100%;
+  }
+}
+
+/* --- Estilos Específicos do FEED --- */
+
+/* Formulário de Novo Post */
+.post-input {
+    width: 100%;
+    min-height: 80px;
+    resize: vertical;
+}
+.container > form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container > form button {
+    align-self: flex-end; /* Alinha o botão para a direita */
+    width: auto;
+}
+
+/* Post Card melhorado (já estava na versão anterior, garantindo a classe post) */
+.post {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.post-header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--secondary-color);
+}
+.post-header span {
+    display: block;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+.post-content p {
+    margin-bottom: 5px;
+}
+
+/* Botões de Ação Curtir/Descurtir */
+.like-btn, .unlike-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-left: 15px;
+    font-weight: 700;
+}
+.like-btn {
+    background-color: var(--secondary-color); /* Verde Ação */
+    color: var(--text-light) !important;
+}
+.like-btn:hover {
+    background-color: #27ae60;
+    text-decoration: none;
+}
+.unlike-btn {
+    background-color: #e74c3c; /* Vermelho Descurtir */
+    color: var(--text-light) !important;
+}
+.unlike-btn:hover {
+    background-color: #c0392b;
+    text-decoration: none;
+}
